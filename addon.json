@@ -1,0 +1,11 @@
+{
+	"title"		:	"Halo Killstreak Addon", 
+	"type"		:	"ServerContent", 
+	"tags"		:	[ "comic", "fun" ], 
+	"ignore"	:
+	[
+		"*.psd", 
+		"*.vcproj", 
+		"*.svn*"
+	]
+}
