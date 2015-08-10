@@ -1,11 +1,9 @@
 if CLIENT then return end 		-- Will get back to this later
 
-local VERSION = "1.02.10"
+local VERSION = "1.03.0"
 
 --Important table for this entire addon :)
 local Players = {}
-
-
 
 --ENUMS
 local CONSOLE = 3
@@ -31,6 +29,14 @@ local HALOSETACCESSLEVELACCESS = SUPERADMIN
 local HALOSERVERSOUNDACCESS = SUPERADMIN
 local HALOSETLOGGINGLEVELACCESS = SUPERADMIN
 local HALONPCKILLSACCESS = SUPERADMIN
+
+local accessMap = {
+	"haloclientsound": SUPERADMIN,
+	"halosetaccesslevel": SUPERADMIN,
+	"haloserversound": SUPERADMIN,
+	"halosetlogginglevel": SUPERADMIN,
+	"halonpckills": SUPERADMIN
+}
 
 --Who is given updates when addon is changed
 local HALOLOGGINGLEVEL = SUPERADMIN
@@ -454,6 +460,11 @@ function denyAccess(ply, levelRequired)
 	end
 end
 
+
+function getAccessLevel(commandName)
+
+
+end
 
 
 concommand.Add("Haloserversound", function(ply, cmd, args)
