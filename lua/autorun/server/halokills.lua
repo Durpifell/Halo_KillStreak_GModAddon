@@ -29,9 +29,15 @@ NOT LUA...
 ]]--
 if CLIENT then return end 		-- Will get back to this later
 
+
+--[[
+Should I store sound file locations in database? What would that even accomplish?
+Find out next time... 
+]]--
+
 local VERSION = "1.03.0"
 
---Important table for this entire addon :)
+--Important table for this entire addon :) (Soon not to be)
 local Players = {}
 
 --ENUMS
@@ -59,6 +65,7 @@ local HALOSERVERSOUNDACCESS = SUPERADMIN
 local HALOSETLOGGINGLEVELACCESS = SUPERADMIN
 local HALONPCKILLSACCESS = SUPERADMIN
 
+--This is going to be moved to a database, wtf am I even doing right now?
 local accessMap = {
 	"haloclientsound": SUPERADMIN,
 	"halosetaccesslevel": SUPERADMIN,
@@ -79,17 +86,6 @@ local UNTOUCHABLE = 25
 local INVINCIBLE = 30
 local INCONCEIVABLE = 35
 local UNFRIGGENBELIEVABLE = 40
-
---[[
-Each level of the array/table = value at that level
-Players[] = 	key = id
-index			value = {
-
-PlayersKillLog = "time" = time of kill using CurTime()
-kill info		 "weapon" = the classname of the weapon used for the kill
-				 "victimName" = victim's name using victim:GetName()
-				 "victimSteamID" = victim's SteamID, duh
---]]
 
 function playerDies( victim, weapon, killer )
 	if victim:IsNPC() && !NPCKILLSCOUNT then return end
@@ -137,7 +133,7 @@ function addPlayer(ply)
 	Players[id] = {}
 end
 
-
+-- V This is such a cool function V Soon to be destroyed and replaced
 function addKill(killer, victim, weapon, time)
 	if !containsPlayer(killer) then
 		addPlayer(killer)
@@ -155,13 +151,6 @@ function addKill(killer, victim, weapon, time)
 		Players[index][killNumber]["victim"] = "NPC"
 		Players[index][killNumber]["victimSteamID"] = victim:GetClass()
 	end
-	--[[ Old method
-	table.insert(Players[index][killNumber], time)
-	table.insert(Players[index][killNumber], weapon:GetClass())
-	table.insert(Players[index][killNumber], victim:Name())
-	table.insert(Players[index][killNumber], victim:SteamID())
-	--]]
-	
 	checkSprees(killer)
 	handleKillStreaks(killer)
 end
@@ -198,8 +187,8 @@ function handleKillStreaks(ply)
 		local index = containsPlayer(ply)
 		local PlayerKills2 = Players[index]
 		if numberOfKills != table.getn(PlayerKills2) then return end 	-- Kill List has been updated, will give your kill streak later
-		if ply:IsValid() && !ply:Alive() then return end 			-- oh shit, you ded, main handles you ded-ing
-		if !ply:IsValid() then return end 							-- Fuckers disconnecting or some shit
+		if ply:IsValid() && !ply:Alive() then return end
+		if !ply:IsValid() then return end
 		if table.getn(PlayerKills) >= 2 then
 			kills = getKillStreak(PlayerKills)
 			dispenseSexyStreak(ply, kills)
