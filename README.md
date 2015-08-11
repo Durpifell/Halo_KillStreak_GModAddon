@@ -1,5 +1,7 @@
 # README #
 
+### DO NOT DOWNLOAD THIS AND PUT ON YOUR SERVER, IT IS CONSTANTLY BEING UPDATED, FOR MORE UPDATED README AND WORKING VERSION GO TO THE ADDON PAGE BELOW ###
+
 ### This repository is for the GMod [Halo Killstreak Addon](http://steamcommunity.com/sharedfiles/filedetails/?id=378274868) ###
 
 Fairly simple addon that adds the basic Halo killstreaks and sprees sounds 
