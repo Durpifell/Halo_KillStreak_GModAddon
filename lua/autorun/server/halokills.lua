@@ -1,3 +1,32 @@
+--[[
+Lua is perhaps the worst programming language ever created, and I am sorry
+to the developers of gmod, who which had to deal with all the terribleness
+that comes with this god forsaken language. And whoever decided that lua
+was a good language deserves to be executed at soonest convience. Along
+with anyone who defends it as an even decent language. It is the
+wannabe ugly younger brother of Python who doesn't actually know anything about
+code what so ever. The simplest of ideas that have been implemented in other
+languages for YEARS has evaded the minds of the developers of Lua. Such things
+as even creating a class is practically impossible, you have to use a fucking
+table and PRETEND it is a class. In all fairness, that is secretly what most languages
+do. But if you are going to boost about how simple your language is to develop in,
+you better fucking make it true. When every other page of your documentation says
+how easy and obvious your language, it makes me want to vomit, and even the website
+itself looks like it hasn't been updated since 1999. Fucking look at it yourself.
+I am glad to see that your website supports this idea, as the only thing it
+fucking has on it is fucking header and paragraph tags, because I don't think
+anyone who likes or develops this terrible language could understand anything 
+but the absolute simpliest of ideas. Do I seem angry? It's because developing
+in Lua gives me figurative cancer, and I'm figuretively going to die...
+It's even worse when people defend this pile of shit language, because most of
+the time, it's because they haven't touched any other language. And honestly,
+I feel sorry for anyone who's only experience is Lua, as it is like eating a piece
+of dog shit whereas Python (in terms of scripting languages) is like eating lobster
+stuffed with gold covered chocolate. If you reading this expecting to learn something,
+I suggest you turn around...then turn around again because this is a fucking computer screen,
+exit this shitty language and go learn some fucking Python, C, C++, Java, C#, ANYTHING, just
+NOT LUA...
+]]--
 if CLIENT then return end 		-- Will get back to this later
 
 local VERSION = "1.03.0"
