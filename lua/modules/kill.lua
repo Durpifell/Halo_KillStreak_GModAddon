@@ -1,4 +1,4 @@
-function Kill(killer, victim, weapon, time)
+return function Kill(killer, victim, weapon, time)
 	local killData = {
 		killer = killer:GetName()
         killerId = killer:SteamID()
